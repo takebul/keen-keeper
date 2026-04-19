@@ -11,7 +11,7 @@ const Navbar = () => {
         <span className="font-extrabold text-3xl text-green-950">Keen</span>
         <span className="font-semibold text-3xl text-green-900">Keeper</span>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-1">
         <MyNavLink className={"text-sm"} to={"/"}>
           <RiHome2Line size={22} /> Home
         </MyNavLink>

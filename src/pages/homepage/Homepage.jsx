@@ -1,9 +1,14 @@
 import React from "react";
+import Banner from "../../components/homepage/Banner";
+import Stats from "../../components/homepage/Stats";
+import Friends from "../../components/homepage/Friends";
 
 const Homepage = () => {
   return (
     <div>
-      <h2 className="text-4xl font-bold text-center">This is Homepage.</h2>
+      <Banner />
+      <Stats />
+      <Friends />
     </div>
   );
 };
