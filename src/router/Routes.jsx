@@ -3,7 +3,9 @@ import { createBrowserRouter } from "react-router";
 import Homepage from "../pages/homepage/Homepage";
 import RootLayout from "../layout/RootLayout";
 import Timeline from "../pages/timeline/Timeline";
-import Stats from "../components/homepage/Stats";
+import Stat from "../components/homepage/Stat";
+import Stats from "../pages/stats/Stats";
+import FriendDetails from "../ui/FriendDetails";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/stats",
         element: <Stats />,
+      },
+      {
+        path: "/details",
+        element: <FriendDetails />,
       },
     ],
     errorElement: <h2>Data is Not Found</h2>,
