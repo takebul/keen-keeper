@@ -7,7 +7,7 @@
     "days_since_contact": 18,
     "status": "overdue",
     "tags": ["college", "hiking buddy"],
-    "bio": "Met during freshman orientation at BU. We still trade trail recommendations and plan one long weekend hike every fall.",
+    "bio": "Met during freshman orientation at BU.",
     "goal": 14,
     "next_due_date": "2026-04-15"
   },
@@ -19,7 +19,7 @@
     "days_since_contact": 11,
     "status": "almost due",
     "tags": ["former coworker", "product"],
-    "bio": "Worked together at a startup in Austin. He always has a strong opinion on new apps and sends great coffee shop picks.",
+    "bio": "Worked together at a startup in Austin.",
     "goal": 14,
     "next_due_date": "2026-04-22"
   },
@@ -31,7 +31,7 @@
     "days_since_contact": 6,
     "status": "on-track",
     "tags": ["book club", "close friend"],
-    "bio": "We met through a neighborhood book club and now swap mystery novels and voice notes about every plot twist.",
+    "bio": "We met through a neighborhood book club.",
     "goal": 21,
     "next_due_date": "2026-05-04"
   },
@@ -43,7 +43,7 @@
     "days_since_contact": 29,
     "status": "overdue",
     "tags": ["soccer", "neighbor"],
-    "bio": "We started talking after joining the same Sunday soccer group. He is the person I call when I need a last-minute teammate.",
+    "bio": "We started talking after joining the same Sunday soccer group.",
     "goal": 21,
     "next_due_date": "2026-04-11"
   },
@@ -55,7 +55,7 @@
     "days_since_contact": 13,
     "status": "almost due",
     "tags": ["designer", "travel"],
-    "bio": "Leah and I met on a delayed flight to Seattle and stayed friends after discovering we both plan trips around local food markets.",
+    "bio": "Leah and I met on a delayed flight to Seattle.",
     "goal": 14,
     "next_due_date": "2026-04-20"
   },
@@ -67,7 +67,7 @@
     "days_since_contact": 4,
     "status": "on-track",
     "tags": ["gaming", "high school"],
-    "bio": "We have known each other since high school robotics club. These days we mostly catch up over co-op games and quick weekend calls.",
+    "bio": "We have known each other since high school robotics club.",
     "goal": 10,
     "next_due_date": "2026-04-25"
   },
@@ -79,7 +79,7 @@
     "days_since_contact": 16,
     "status": "almost due",
     "tags": ["photography", "mentor"],
-    "bio": "Sofia mentored me during my first freelance project. She still shares thoughtful feedback and the occasional camera gear recommendation.",
+    "bio": "Sofia mentored me during my first freelance project.",
     "goal": 18,
     "next_due_date": "2026-04-21"
   },
@@ -91,7 +91,7 @@
     "days_since_contact": 35,
     "status": "overdue",
     "tags": ["startup", "accountability buddy"],
-    "bio": "We meet every few weeks to compare side-project progress. Ethan is great at turning vague ideas into practical next steps.",
+    "bio": "We meet every few weeks to compare side-project progress.",
     "goal": 30,
     "next_due_date": "2026-04-14"
   },
@@ -103,7 +103,7 @@
     "days_since_contact": 8,
     "status": "on-track",
     "tags": ["cousin", "family"],
-    "bio": "Aisha lives in Chicago and somehow always knows the best new restaurants before anyone else. Our calls usually end with recipe swaps.",
+    "bio": "Aisha lives in Chicago and somehow always knows the best.",
     "goal": 15,
     "next_due_date": "2026-04-26"
   },
@@ -115,7 +115,7 @@
     "days_since_contact": 19,
     "status": "overdue",
     "tags": ["music", "college roommate"],
-    "bio": "Noah was my college roommate and still sends me rough demos from his home studio. We usually reconnect before local live shows.",
+    "bio": "We usually reconnect before local live shows.",
     "goal": 14,
     "next_due_date": "2026-04-14"
   }

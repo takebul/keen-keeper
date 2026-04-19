@@ -1,9 +1,14 @@
-import React from "react";
+// import React, { useContext } from "react";
 import useFriendsData from "../../hook/useFriendsData";
 import { Link } from "react-router";
+import { FriendContext } from "../../context/FriendContext";
 
 const Friends = () => {
+  //   const { id } = useParams();
   const { friends, loading } = useFriendsData();
+  //   const expectedFriend = friends.find((friend) => String(friend.id) === id);
+
+  //   const { friendsDetails, setFriendsDetails } = useContext(FriendContext);
 
   if (loading) {
     return (
@@ -13,6 +18,10 @@ const Friends = () => {
     );
   }
 
+  //   const handleFriendDetails = () => {
+  //     setFriendsDetails([...friendsDetails, expectedFriend]);
+  //   };
+
   return (
     <div className="w-11/12 mx-auto pt-10 pb-7 border-t border-gray-300">
       <h2 className="text-2xl font-semibold pb-4">Your Friends</h2>
@@ -20,7 +29,9 @@ const Friends = () => {
         {friends.map((friend) => {
           return (
             <Link
-              to={"/details"}
+              //   onClick={handleFriendDetails}
+              key={friend.id}
+              to={`/details/${friend.id}`}
               className="p-8 bg-white rounded-md justify-items-center space-y-2.5 shadow text-center"
             >
               <img
