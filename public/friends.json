@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Maya Thompson",
+    "picture": "https://i.ibb.co.com/HDdcLP18/photo-1494790108377-be9c29b29330.jpg",
+    "email": "maya.thompson@example.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["college", "hiking buddy"],
+    "bio": "Met during freshman orientation at BU. We still trade trail recommendations and plan one long weekend hike every fall.",
+    "goal": 14,
+    "next_due_date": "2026-04-15"
+  },
+  {
+    "id": 2,
+    "name": "Daniel Kim",
+    "picture": "https://i.ibb.co.com/Rk8pvShP/photo-1500648767791-00dcc994a43e.avif",
+    "email": "daniel.kim@example.com",
+    "days_since_contact": 11,
+    "status": "almost due",
+    "tags": ["former coworker", "product"],
+    "bio": "Worked together at a startup in Austin. He always has a strong opinion on new apps and sends great coffee shop picks.",
+    "goal": 14,
+    "next_due_date": "2026-04-22"
+  },
+  {
+    "id": 3,
+    "name": "Priya Raman",
+    "picture": "https://i.ibb.co.com/4nRxP7Ly/photo-1438761681033-6461ffad8d80.avif",
+    "email": "priya.raman@example.com",
+    "days_since_contact": 6,
+    "status": "on-track",
+    "tags": ["book club", "close friend"],
+    "bio": "We met through a neighborhood book club and now swap mystery novels and voice notes about every plot twist.",
+    "goal": 21,
+    "next_due_date": "2026-05-04"
+  },
+  {
+    "id": 4,
+    "name": "Marcus Alvarez",
+    "picture": "https://i.ibb.co.com/mV6d8hFt/photo-1506794778202-cad84cf45f1d.avif",
+    "email": "marcus.alvarez@example.com",
+    "days_since_contact": 29,
+    "status": "overdue",
+    "tags": ["soccer", "neighbor"],
+    "bio": "We started talking after joining the same Sunday soccer group. He is the person I call when I need a last-minute teammate.",
+    "goal": 21,
+    "next_due_date": "2026-04-11"
+  },
+  {
+    "id": 5,
+    "name": "Leah Brooks",
+    "picture": "https://i.ibb.co.com/vvrLp8KZ/photo-1488426862026-3ee34a7d66df.avif",
+    "email": "leah.brooks@example.com",
+    "days_since_contact": 13,
+    "status": "almost due",
+    "tags": ["designer", "travel"],
+    "bio": "Leah and I met on a delayed flight to Seattle and stayed friends after discovering we both plan trips around local food markets.",
+    "goal": 14,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 6,
+    "name": "Owen Patel",
+    "picture": "https://i.ibb.co.com/3mfw9J6g/photo-1504593811423-6dd665756598.avif",
+    "email": "owen.patel@example.com",
+    "days_since_contact": 4,
+    "status": "on-track",
+    "tags": ["gaming", "high school"],
+    "bio": "We have known each other since high school robotics club. These days we mostly catch up over co-op games and quick weekend calls.",
+    "goal": 10,
+    "next_due_date": "2026-04-25"
+  },
+  {
+    "id": 7,
+    "name": "Sofia Nguyen",
+    "picture": "https://i.ibb.co.com/5hHsTx5G/photo-1544005313-94ddf0286df2.avif",
+    "email": "sofia.nguyen@example.com",
+    "days_since_contact": 16,
+    "status": "almost due",
+    "tags": ["photography", "mentor"],
+    "bio": "Sofia mentored me during my first freelance project. She still shares thoughtful feedback and the occasional camera gear recommendation.",
+    "goal": 18,
+    "next_due_date": "2026-04-21"
+  },
+  {
+    "id": 8,
+    "name": "Ethan Walker",
+    "picture": "https://i.ibb.co.com/gFLNHwjy/photo-1504257432389-52343af06ae3.avif",
+    "email": "ethan.walker@example.com",
+    "days_since_contact": 35,
+    "status": "overdue",
+    "tags": ["startup", "accountability buddy"],
+    "bio": "We meet every few weeks to compare side-project progress. Ethan is great at turning vague ideas into practical next steps.",
+    "goal": 30,
+    "next_due_date": "2026-04-14"
+  },
+  {
+    "id": 9,
+    "name": "Aisha Hassan",
+    "picture": "https://i.ibb.co.com/bG1r5w2/photo-1517841905240-472988babdf9.avif",
+    "email": "aisha.hassan@example.com",
+    "days_since_contact": 8,
+    "status": "on-track",
+    "tags": ["cousin", "family"],
+    "bio": "Aisha lives in Chicago and somehow always knows the best new restaurants before anyone else. Our calls usually end with recipe swaps.",
+    "goal": 15,
+    "next_due_date": "2026-04-26"
+  },
+  {
+    "id": 10,
+    "name": "Noah Reed",
+    "picture": "https://i.ibb.co.com/KzRgvm5G/photo-1506277886164-e25aa3f4ef7f.avif",
+    "email": "noah.reed@example.com",
+    "days_since_contact": 19,
+    "status": "overdue",
+    "tags": ["music", "college roommate"],
+    "bio": "Noah was my college roommate and still sends me rough demos from his home studio. We usually reconnect before local live shows.",
+    "goal": 14,
+    "next_due_date": "2026-04-14"
+  }
+]

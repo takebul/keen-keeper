@@ -6,7 +6,7 @@ import { TfiStatsUp } from "react-icons/tfi";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center gap-10 shadow py-5 px-10">
+    <div className="flex justify-between items-center gap-10 shadow py-4 px-9">
       <div>
         <span className="font-extrabold text-3xl text-green-950">Keen</span>
         <span className="font-semibold text-3xl text-green-900">Keeper</span>
