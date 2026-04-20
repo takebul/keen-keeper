@@ -4,10 +4,15 @@ import { PiBellZBold } from "react-icons/pi";
 import { FiArchive } from "react-icons/fi";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { TbPhoneCall } from "react-icons/tb";
+import { MdOutlineTextsms } from "react-icons/md";
+import { LuVideo } from "react-icons/lu";
+import { FriendContext } from "../context/FriendContext";
+import { useContext } from "react";
 
 const FriendDetails = () => {
   const { id } = useParams();
   const { friends, loading } = useFriendsData();
+  const { friendsTimeline, setFriendsTimeline } = useContext(FriendContext);
   const expectedFriend = friends.find((friend) => String(friend.id) === id);
 
   if (loading) {
@@ -18,14 +23,21 @@ const FriendDetails = () => {
     );
   }
 
+  const handleTimeline = (btn, date) => {
+    const checkInBtn = { ...expectedFriend };
+    checkInBtn.call = btn;
+    checkInBtn.date = date;
+    console.log(btn, "btn", date, "date");
+
+    setFriendsTimeline([...friendsTimeline, checkInBtn]);
+    // console.log(`${Date()}`, friendsTimeline);
+  };
+
   return (
     <div className="bg-base-200">
-      <div className="w-10/12 mx-auto grid grid-cols-5 gap-4 py-10">
+      <div className="w-10/12 mx-auto justify-items-center md:grid grid-cols-5 gap-4 py-10">
         <div className="col-span-2 space-y-2">
-          <div
-            to={"/details"}
-            className="p-4 bg-white rounded-md justify-items-center space-y-2 shadow text-center"
-          >
+          <div className="p-4 bg-white rounded-md justify-items-center space-y-2 shadow text-center">
             <img
               className="w-20 h-20 rounded-full object-cover"
               src={expectedFriend.picture}
@@ -38,13 +50,24 @@ const FriendDetails = () => {
             >
               {expectedFriend.status}
             </p>
-            <p className="bg-green-200 px-3 py-0.5 rounded-full uppercase text-sm">
-              {expectedFriend.tags.find((tag) => {
-                return <p>{tag}</p>;
+            <div className="flex gap-2">
+              {expectedFriend.tags.map((tag, ind) => {
+                return (
+                  <div
+                    key={ind}
+                    className="bg-green-200 px-3 py-0.5 rounded-full uppercase text-sm font-medium"
+                  >
+                    {tag}
+                  </div>
+                );
               })}
+            </div>
+            <p className="text-neutral-500 font-medium">
+              "{expectedFriend.bio}"
             </p>
-            <p>"{expectedFriend.bio}"</p>
-            <p>Preferred: {expectedFriend.email}</p>
+            <p className="text-neutral-500 font-medium">
+              Preferred: {expectedFriend.email}
+            </p>
           </div>
           <div className="p-3 bg-white shadow rounded-md">
             <p className="flex items-center gap-1 font-semibold text-lg text-gray-600 justify-center cursor-pointer">
@@ -64,24 +87,26 @@ const FriendDetails = () => {
           </div>
         </div>
         <div className="col-span-3 row-span-1 space-y-3">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 gap-4">
             <div className="space-y-2 bg-white p-6 rounded-md shadow text-center">
-              <h2 className="font-semibold text-3xl text-green-900">62</h2>
+              <h2 className="font-semibold text-3xl text-green-900">
+                {expectedFriend.days_since_contact}
+              </h2>
               <p className="text-md font-medium text-gray-600">
                 Days Since Contact
               </p>
             </div>
             <div className="space-y-2 bg-white p-6 rounded-md shadow text-center">
-              <h2 className="font-semibold text-3xl text-green-900">62</h2>
-              <p className="text-md font-medium text-gray-600">
-                Days Since Contact
-              </p>
+              <h2 className="font-semibold text-3xl text-green-900">
+                {expectedFriend.goal}
+              </h2>
+              <p className="text-md font-medium text-gray-600">Goal (Days)</p>
             </div>
             <div className="space-y-2 bg-white p-6 rounded-md shadow text-center">
-              <h2 className="font-semibold text-3xl text-green-900">62</h2>
-              <p className="text-md font-medium text-gray-600">
-                Days Since Contact
-              </p>
+              <h2 className="font-semibold text-2xl text-green-900">
+                {expectedFriend.next_due_date}
+              </h2>
+              <p className="text-md font-medium text-gray-600">Next Due</p>
             </div>
           </div>
           <div className="bg-white rounded-md shadow p-1">
@@ -93,30 +118,42 @@ const FriendDetails = () => {
             </div>
             <p className="mx-3 mb-3 font-medium text-gray-600">
               Contact every
-              <span className="font-semibold text-gray-900"> 30 days</span>
+              <span className="font-semibold text-gray-900">
+                {" "}
+                {expectedFriend.days_since_contact} days
+              </span>
             </p>
           </div>
           <div className="bg-white p-3 pb-4 px-5 rounded-md shadow space-y-3">
             <p>Quick Check-In</p>
             <div className="grid grid-cols-3 gap-4">
-              <div className="space-y-2 bg-base-200 p-6 rounded-md shadow text-center">
+              <button
+                onClick={() => handleTimeline("call", `${Date()}`)}
+                className="btn space-y-1 bg-base-200 p-13 flex flex-col rounded-md shadow text-center"
+              >
                 <h2 className="font-semibold text-3xl text-green-900 justify-items-center">
                   <TbPhoneCall />
                 </h2>
                 <p className="text-md font-medium text-gray-600">Call</p>
-              </div>
-              <div className="space-y-2 bg-base-200 p-6 rounded-md shadow text-center">
+              </button>
+              <button
+                onClick={() => handleTimeline("text", `${Date()}`)}
+                className="btn space-y-1 bg-base-200 p-13 flex flex-col rounded-md shadow text-center"
+              >
                 <h2 className="font-semibold text-3xl text-green-900 justify-items-center">
-                  <TbPhoneCall />
+                  <MdOutlineTextsms />
                 </h2>
-                <p className="text-md font-medium text-gray-600">Call</p>
-              </div>
-              <div className="space-y-2 bg-base-200 p-6 rounded-md shadow text-center">
+                <p className="text-md font-medium text-gray-600">Text</p>
+              </button>
+              <button
+                onClick={() => handleTimeline("video", `${Date()}`)}
+                className="btn space-y-1 bg-base-200 p-13 flex flex-col rounded-md shadow text-center"
+              >
                 <h2 className="font-semibold text-3xl text-green-900 justify-items-center">
-                  <TbPhoneCall />
+                  <LuVideo />
                 </h2>
-                <p className="text-md font-medium text-gray-600">Call</p>
-              </div>
+                <p className="text-md font-medium text-gray-600">Video</p>
+              </button>
             </div>
           </div>
         </div>

@@ -41,11 +41,18 @@ const Friends = () => {
               />
               <h4 className="text-xl font-semibold">{friend.name}</h4>
               <p>{friend.days_since_contact}d ago </p>
-              <p className="bg-green-200 px-3 py-1 rounded-full uppercase text-sm">
-                {friend.tags.find((tag) => {
-                  return <p>{tag}</p>;
+              <div className="flex justify-center items-center gap-2">
+                {friend.tags.map((tag, ind) => {
+                  return (
+                    <div
+                      key={ind}
+                      className="bg-green-200 px-3 py-0.5 rounded-full uppercase text-xs font-medium"
+                    >
+                      {tag}
+                    </div>
+                  );
                 })}
-              </p>
+              </div>
               <p
                 className={` text-white rounded-full px-2.5 py-1" ${friend.status === "overdue" ? "bg-red-500" : friend.status === "on-track" ? "bg-gray-600" : "bg-yellow-500"}`}
               >

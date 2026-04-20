@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { FriendContext } from "./FriendContext";
 
 const FriendContextProvider = ({ children }) => {
-  const [friendsDetails, setFriendsDetails] = useState([]);
+  const [friendsTimeline, setFriendsTimeline] = useState([]);
 
   const data = {
-    friends: friendsDetails,
-    setFriendsDetails,
+    friendsTimeline,
+    setFriendsTimeline,
   };
 
   return (
