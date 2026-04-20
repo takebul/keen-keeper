@@ -1,13 +1,14 @@
 import React from "react";
 import useFriendsData from "../../hook/useFriendsData";
+import { RingLoader } from "react-spinners";
 
 const Stat = () => {
   const { friends, loading } = useFriendsData();
 
   if (loading) {
     return (
-      <div>
-        <h2>Loading...</h2>
+      <div className="flex justify-center items-center">
+        <RingLoader />
       </div>
     );
   }

@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
 import { FriendContext } from "../../context/FriendContext";
 import { Legend, Pie, PieChart, Tooltip } from "recharts";
+import useFriendsData from "../../hook/useFriendsData";
+import { RingLoader } from "react-spinners";
 
 const Stats = () => {
   const { friendsTimeline } = useContext(FriendContext);
+
+  const { loading } = useFriendsData();
 
   const call = friendsTimeline.filter((friend) => friend.call === "call");
 
@@ -16,6 +20,14 @@ const Stats = () => {
     { name: "Call", value: call.length, fill: "#7E35E1" },
     { name: "Video", value: video.length, fill: "#1A8862" },
   ];
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center">
+        <RingLoader />
+      </div>
+    );
+  }
 
   return (
     <div className="bg-base-200">

@@ -8,20 +8,13 @@ import { MdOutlineTextsms } from "react-icons/md";
 import { LuVideo } from "react-icons/lu";
 import { FriendContext } from "../context/FriendContext";
 import { useContext } from "react";
+import { RingLoader } from "react-spinners";
 
 const FriendDetails = () => {
   const { id } = useParams();
   const { friends, loading } = useFriendsData();
   const { friendsTimeline, setFriendsTimeline } = useContext(FriendContext);
   const expectedFriend = friends.find((friend) => String(friend.id) === id);
-
-  if (loading) {
-    return (
-      <div>
-        <h2>Loading....</h2>
-      </div>
-    );
-  }
 
   const handleTimeline = (btn, date) => {
     const checkInBtn = { ...expectedFriend };
@@ -32,6 +25,14 @@ const FriendDetails = () => {
     setFriendsTimeline([...friendsTimeline, checkInBtn]);
     console.log(`${Date()}`, friendsTimeline);
   };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center">
+        <RingLoader />
+      </div>
+    );
+  }
 
   return (
     <div className="bg-base-200">

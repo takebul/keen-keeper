@@ -3,9 +3,13 @@ import { FriendContext } from "../../context/FriendContext";
 import call from "../../assets/call.png";
 import video from "../../assets/video.png";
 import text from "../../assets/text.png";
+import useFriendsData from "../../hook/useFriendsData";
+import { RingLoader } from "react-spinners";
 
 const Timeline = () => {
   const { friendsTimeline } = useContext(FriendContext);
+
+  const { loading } = useFriendsData();
 
   const [filterTimeline, setFilterTimeline] = useState(friendsTimeline);
 
@@ -26,6 +30,14 @@ const Timeline = () => {
   //   setSortTimeline(sorted);
   //   console.log(sorted);
   // };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center">
+        <RingLoader />
+      </div>
+    );
+  }
 
   return (
     <div className="bg-base-200 py-10">
