@@ -10,7 +10,7 @@ The KeenKeeper platform is very useful up to you. Because here is coming lots of
 
 ## When I made this platform:
 
-I made this platform very recently. if you find some issues or problem on this platform. You can contact with me. I will try my best opinion to solving your problem on your query.
+I made this platform very recently. If you find some issues or problem on this platform. You can contact with me. I will try my best opinion to solving your problem depends on your query.
 
 ---
 
