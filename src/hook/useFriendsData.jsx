@@ -9,13 +9,13 @@ const useFriendsData = () => {
       const res = await fetch("/friends.json");
       const data = await res.json();
 
-      setTimeout(() => {
-        setFriends(data);
-        setLoading(false);
-      }, 3000);
+      // setTimeout(() => {
+      //   setFriends(data);
+      //   setLoading(false);
+      // }, 3000);
 
-      // setFriends(data);
-      // setLoading(false);
+      setFriends(data);
+      setLoading(false);
     };
     fetchFriends();
   }, []);

@@ -1,17 +1,8 @@
 import React from "react";
 import useFriendsData from "../../hook/useFriendsData";
-import { RingLoader } from "react-spinners";
 
 const Stat = () => {
-  const { friends, loading } = useFriendsData();
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center">
-        <RingLoader />
-      </div>
-    );
-  }
+  const { friends } = useFriendsData();
 
   const overdue = friends.filter((friend) => friend.status === "overdue");
   const onTrack = friends.filter((friend) => friend.status === "on-track");

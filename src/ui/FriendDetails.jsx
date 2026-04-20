@@ -9,6 +9,7 @@ import { LuVideo } from "react-icons/lu";
 import { FriendContext } from "../context/FriendContext";
 import { useContext } from "react";
 import { RingLoader } from "react-spinners";
+import { toast } from "react-toastify";
 
 const FriendDetails = () => {
   const { id } = useParams();
@@ -20,10 +21,9 @@ const FriendDetails = () => {
     const checkInBtn = { ...expectedFriend };
     checkInBtn.type = btn;
     checkInBtn.date = date;
-    console.log(btn, "btn", date, "date");
 
     setFriendsTimeline([...friendsTimeline, checkInBtn]);
-    console.log(`${Date()}`, friendsTimeline);
+    toast.success(`${checkInBtn.type} check-in successful.`);
   };
 
   if (loading) {

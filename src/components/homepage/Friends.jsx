@@ -2,25 +2,18 @@
 import useFriendsData from "../../hook/useFriendsData";
 import { Link } from "react-router";
 import { FriendContext } from "../../context/FriendContext";
+import { RingLoader } from "react-spinners";
 
 const Friends = () => {
-  //   const { id } = useParams();
   const { friends, loading } = useFriendsData();
-  //   const expectedFriend = friends.find((friend) => String(friend.id) === id);
-
-  //   const { friendsDetails, setFriendsDetails } = useContext(FriendContext);
 
   if (loading) {
     return (
-      <div>
-        <h2>Loading....</h2>
+      <div className="flex justify-center items-center py-4">
+        <RingLoader />
       </div>
     );
   }
-
-  //   const handleFriendDetails = () => {
-  //     setFriendsDetails([...friendsDetails, expectedFriend]);
-  //   };
 
   return (
     <div className="w-11/12 mx-auto pt-10 pb-7 border-t border-gray-300">
@@ -29,7 +22,6 @@ const Friends = () => {
         {friends.map((friend) => {
           return (
             <Link
-              //   onClick={handleFriendDetails}
               key={friend.id}
               to={`/details/${friend.id}`}
               className="p-8 bg-white rounded-md justify-items-center space-y-2.5 shadow text-center"
