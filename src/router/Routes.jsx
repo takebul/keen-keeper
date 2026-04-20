@@ -6,6 +6,7 @@ import Timeline from "../pages/timeline/Timeline";
 import Stat from "../components/homepage/Stat";
 import Stats from "../pages/stats/Stats";
 import FriendDetails from "../ui/FriendDetails";
+import ErrorPage from "../errorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
         element: <FriendDetails />,
       },
     ],
-    errorElement: <h2>Data is Not Found</h2>,
+    errorElement: <ErrorPage />,
   },
 ]);
 

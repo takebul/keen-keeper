@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { FriendContext } from "../../context/FriendContext";
 import call from "../../assets/call.png";
 import video from "../../assets/video.png";
@@ -7,33 +7,25 @@ import text from "../../assets/text.png";
 const Timeline = () => {
   const { friendsTimeline } = useContext(FriendContext);
 
-  const [sort, setSort] = useState("");
+  const [filterTimeline, setFilterTimeline] = useState(friendsTimeline);
 
-  const [sortFilter, setSortFilter] = useState(friendsTimeline);
+  // const [sortTimeline, setSortTimeline] = useState(friendsTimeline);
 
-  useEffect(() => {
-    if (sort) {
-      if (sort === "goal") {
-        const sortData = [...friendsTimeline].sort((a, b) => a.goal - b.goal);
-        setSortFilter(sortData);
-      } else if (sort === "id") {
-        const sortData = [...friendsTimeline].sort((a, b) => a.id - b.id);
-        setSortFilter(sortData);
-      }
-    }
-  }, [sort, friendsTimeline]);
+  const handleFilterType = (e) => {
+    const filterType = e.target.value.toLowerCase();
+    const filtered = friendsTimeline.filter(
+      (friend) => friend.type === filterType,
+    );
+    setFilterTimeline(filtered);
+  };
 
-  // const handleCallFilterOption = friendsTimeline.filter(
-  //   (friend) => friend.call === "call",
-  // );
-
-  // const handleTextFilterOption = friendsTimeline.filter(
-  //   (friend) => friend.call === "text",
-  // );
-
-  // const handleVideoFilterOption = friendsTimeline.filter(
-  //   (friend) => friend.call === "video",
-  // );
+  // const handleSortType = (e) => {
+  //   const sortType = e.target.value.toLowerCase();
+  //   const sorted = friendsTimeline.filter((friend) => friend.goal === sortType);
+  //   console.log(sorted);
+  //   setSortTimeline(sorted);
+  //   console.log(sorted);
+  // };
 
   return (
     <div className="bg-base-200 py-10">
@@ -70,30 +62,39 @@ const Timeline = () => {
             </div>
           </div>
           <div className="flex justify-between items-center">
-            <select defaultValue="Pick a color" className="select">
-              <option disabled={true}>Filter timeline</option>
+            <select
+              onChange={handleFilterType}
+              defaultValue="Pick a color"
+              className="select"
+            >
+              <option className="btn-disabled btn-ghost">
+                Filter timeline
+              </option>
               <option>Call</option>
               <option>Text</option>
               <option>Video</option>
             </select>
 
-            <select className="border rounded-md p-3 bg-white">
-              <option disabled={false}>sort by</option>
-              <option onClick={() => setSort("goal")}>goal</option>
-              <option onClick={() => setSort("id")}>0-9</option>
+            <select
+              // onChange={handleSortType}
+              className="border rounded-md p-3 bg-white"
+            >
+              <option disabled={true}>sort by</option>
+              <option>goal</option>
+              <option>0-9</option>
             </select>
           </div>
-          {sortFilter.map((friend, ind) => (
+          {filterTimeline.map((friend, ind) => (
             <div key={ind} className="bg-white p-4 rounded-lg shadow">
               <div>
                 <div className="flex items-center gap-6 mb-3">
                   <img
-                    src={`${friend.call === "call" ? call : friend.call === "video" ? video : text}`}
+                    src={`${friend.type === "call" ? call : friend.type === "video" ? video : text}`}
                     alt={friend.name}
                   />
 
                   <div>
-                    <span className="font-bold text-lg">{`${friend.call === "call" ? "Call" : friend.text === "text" ? "Text" : "Video"}`}</span>{" "}
+                    <span className="font-bold text-lg">{`${friend.type === "call" ? "Call" : friend.type === "text" ? "Text" : "Video"}`}</span>{" "}
                     <span className="text-gray-500 font-light">
                       {friend.name}
                     </span>

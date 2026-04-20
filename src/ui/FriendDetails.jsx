@@ -25,12 +25,12 @@ const FriendDetails = () => {
 
   const handleTimeline = (btn, date) => {
     const checkInBtn = { ...expectedFriend };
-    checkInBtn.call = btn;
+    checkInBtn.type = btn;
     checkInBtn.date = date;
     console.log(btn, "btn", date, "date");
 
     setFriendsTimeline([...friendsTimeline, checkInBtn]);
-    // console.log(`${Date()}`, friendsTimeline);
+    console.log(`${Date()}`, friendsTimeline);
   };
 
   return (
